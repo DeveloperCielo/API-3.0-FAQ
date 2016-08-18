@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Frequently Asked Questions</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link href="https://www.cielo.com.br/wps/contenthandler/!ut/p/digest!3SvhW8ACOLyj_90YHxPhKQ/war/cielo-tema/themes/estatico/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="javascripts/all.js" type="text/javascript"></script>
+
+    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    ga('create', 'UA-8516386-7', {'cookieDomain': 'auto', 'alwaysSendReferrer': true});
+    ga('create', 'UA-31855766-1', {'name': 'iMasters', 'cookieDomain': 'auto', 'alwaysSendReferrer': true});
+
+    ga("set", "transport", "beacon");
+    ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="english">
+    <a href="#" id="nav-button">
+        <span>
+            NAV
+            <img src="images/navbar.png" />
+        </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+        <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+        <div id="toc">
+        </div>
+        <h2 class="toc-footer-title">Materiais complementares</h2>
+        <ul class="toc-footer">
+            <li><a href='/Webservice-1.5/'>Integração Webservice 1.5</a></li>
+            <li><a href='/Webservice-1.5-Processamento-em-lote/'>Batch Processing</a></li>
+        </ul>
+        <div class="links-footer">
+            <ul class="link-list">
+                <li class="cielo"><a href="https://www.cielo.com.br/ecommerce">Cielo</a></li>
+                <li class="github"><a href="https://github.com/developercielo">Cielo</a></li>
+                <li class="desenvolvedores"><a href="https://www.cielo.com.br/desenvolvedores">Cielo</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-wrapper">
+            <div class="content no-dark-box">
+                <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+
+<h2 id="how-does-the-solution-web-service-1.5-cielo-works?">How does the solution Web service 1.5 Cielo works?</h2>
+
+<p>The Web service solution Cielo e-commerce platform was developed with XML technology, which is market standard and independent of the technology used by our customers. Thus, it is possible to integrate it using various programming languages, such as ASP, ASP. Net,  Java, PHP, Ruby, Python, etc.</p>
+
+<h2 id="it-takes-some-proprietary-software,-such-as-dlls,-to-integrate?">It takes some proprietary software, such as DLLs, to integrate?</h2>
+
+<p>No. The lack of proprietary applications is one of the features of the solution: It&rsquo;s not necessary to install applications on the virtual store environment <strong>under any circumstances</strong>.</p>
+
+<h2 id="what-kind-of-content-is-sent-in-integration?">What kind of content is sent in integration?</h2>
+
+<p>The integration is accomplished through available services such as Web Services. The employee model is quite simple: there is a unique URL (endpoint) which receives POSTs via HTTPs and depending on the submitted XML format, an operation is performed.</p>
+
+<h2 id="as-the-web-service-cielo-know-that-the-request-is-from-my-store?">As the Web service Cielo know that the request is from my store?</h2>
+
+<p>All requests Cielo Web Service <strong>must contain the merchant authentication node</strong>, composed by the number of credential and access key provided by Cielo at the time of affiliation.</p>
+
+<h2 id="what-is-a-transaction?">What is a transaction?</h2>
+
+<p>The central element of Cielo E-commerce is the transaction created from an HTTP request to the Web service Cielo. The unique ID of a transaction in Cielo is done through the TID field, which is present in the return of authorization messages. This field is essential to consult, catches and cancellations.</p>
+
+<h2 id="what-types-of-errors-can-occur-during-integration?">What types of errors can occur during integration?</h2>
+
+<p>When the transaction is invalid, we can classify errors into two types:</p>
+
+<p>• <strong>Syntactical errors:</strong> occur when the XML message does not respect the rules defined in ecommerce.xsd file. For example, a letter in a number field or the absence of a required value;</p>
+
+<p>• <strong>Semantic errors:</strong> occur when a request requesting an operation not supported for a given transaction. For example, try to capture an unauthorized transaction, or even cancel a transaction already canceled.</p>
+
+<p>Error messages always bring additional information to facilitate troubleshooting.</p>
+
+<h2 id="how-do-i-direct-authorization?">How do I direct authorization?</h2>
+
+<p>Direct authorization is characterized as a transaction where there is no carrier authentication, either by choice (and risk) of the retailer, either because the flag or issuer is not supported. The direct authorization may be done in two ways: traditional (with card data) or via a token.</p>
+
+<h2 id="how-i-do-a-recurring-authorization?">How I do a recurring authorization?</h2>
+
+<p>The applicant authorization may be made in two ways: by sending a pre-registered token, or through a card. A recurring transaction is practically the same as traditional transaction, the changes consist of the issuer rules and the flag used to authorize or deny a transaction. Another difference is related to Renova Easy.</p>
+
+<h3 id="is-it-possible-to-capture-a-moment-after-authorization?">Is it possible to capture a moment after authorization?</h3>
+
+<p>A transaction authorized only generates credit for the shop if it is captured. So every sale that the retailer wants to carry out will need to perform the capture (or confirmation) of the transaction.</p>
+
+<p>For sales in Credit mode, this confirmation can occur in two stages:</p>
+
+<p>• Immediately after authorization (total catch);
+• Subsequent to authorization (total or partial capture).</p>
+
+<p>In the first case, it is not necessary to send a capture request because it is done automatically by Cielo after transaction authorization. For that, it needs to configure the transaction request by setting the &ldquo;true&rdquo; value for the TAG, as seen in &ldquo;Creating a transaction&rdquo; section.</p>
+
+<p>In the second case, you must make a &ldquo;subsequent capture&rdquo; through a new request to Cielo Web service to confirm the transaction and receive the value of the sale.</p>
+
+<aside class="warning"><strong>Atenção!</strong>: In the debit mode there is no such option: all authorized debit transaction is captured automatically.</aside>
+
+<h2 id="can-i-cancel-a-transaction?">Can I cancel a transaction?</h2>
+
+<p>The cancellation is used when the tenant decides not to carry out a purchase order, either due to insufficient stock, for withdrawal of purchase by the consumer, or any other reason. Its use mainly necessary to make up the transaction is captured,  it will debit the carrier bill, if it is not canceled.</p>
+
+<aside class="notice">If the transaction is only allowed and the store wants to cancel it, the cancellation request is not necessary because after the deadline capture expires, it is automatically canceled by the system.</aside>
+
+<h2 id="there-is-a-testing-environment-for-integration?">There is a testing environment for integration?</h2>
+
+<p>Integration testing should be performed prior to approval for development (coding) of the solution. Para isso, deve-se considerar o seguinte ambiente como EndPoint do Webservice: <a href="https://qasecommerce.cielo.com.br/servicos/ecommwsec.do">https://qasecommerce.cielo.com.br/servicos/ecommwsec.do</a></p>
+
+<p>To facilitate the development available for testing two keys, one for each integration mode. Based on the initial settings made during its accreditation, choose the correct data to perform the tests:</p>
+
+<table><thead>
+<tr>
+<th>NUMBER OF COMMERCIAL ESTABLISHMENT</th>
+<th>KEY TESTS</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1006993069</td>
+<td>25fbb99741c739dd84d7b06ec78c9bac718838630f30b112d033ce2e621b34f3</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">The test environment should only be used by testing establishments listed in the table above. The use of original property will generate data not possible to trace transactions, generating incorrect results. In the test environment, use the credentials for testing, the production environment, use the original property data.</aside>
+
+<h2 id="is-there-any-rule-for-reading-cards?">Is there any rule for reading cards?</h2>
+
+<p>Reading the card data in their own environment is controlled by rules defined by the security program imposed by the card brands.</p>
+
+<p>For Visa, this program is known as AIS (Account Information Security) PCI. For more information visit: <a href="www.cielo.com.br">www.cielo.com.br</a> &gt; Services&gt; Security Services&gt; AIS - Safety Program Information, or contact us.</p>
+
+<p>MasterCard for the security program is the SDP (Site Data Protection) PCI. For more information visit: <a href="http://www.mastercard.com/us/sdp/index.html">http://www.mastercard.com/us/sdp/index.html</a>, or contact us.</p>
+
+<p>Furthermore, once the requirements are met, at the time of e-commerce accreditation should be mentioned the choice of reading the card in the store.</p>
+
+            </div>
+        </div>
+    </body>
+    </html>

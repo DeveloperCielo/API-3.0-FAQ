@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Perguntas frequentes</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link href="https://www.cielo.com.br/wps/contenthandler/!ut/p/digest!3SvhW8ACOLyj_90YHxPhKQ/war/cielo-tema/themes/estatico/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="javascripts/all.js" type="text/javascript"></script>
+
+    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    ga('create', 'UA-8516386-7', {'cookieDomain': 'auto', 'alwaysSendReferrer': true});
+    ga('create', 'UA-31855766-1', {'name': 'iMasters', 'cookieDomain': 'auto', 'alwaysSendReferrer': true});
+
+    ga("set", "transport", "beacon");
+    ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="index">
+    <a href="#" id="nav-button">
+        <span>
+            NAV
+            <img src="images/navbar.png" />
+        </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+        <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+        <div id="toc">
+        </div>
+        <h2 class="toc-footer-title">Materiais complementares</h2>
+        <ul class="toc-footer">
+            <li><a href='/Webservice-3.0/'>Integração API 3.0</a></li>
+        </ul>
+        <div class="links-footer">
+            <ul class="link-list">
+                <li class="cielo"><a href="https://www.cielo.com.br/ecommerce">Cielo</a></li>
+                <li class="github"><a href="https://github.com/developercielo">Cielo</a></li>
+                <li class="desenvolvedores"><a href="https://www.cielo.com.br/desenvolvedores">Cielo</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-wrapper">
+            <div class="content no-dark-box">
+                <h1 id="perguntas-frequentes">Perguntas frequentes</h1>
+
+<h2 id="como-funciona-a-solução-api-3.0-da-cielo?">Como funciona a solução API 3.0 da Cielo?</h2>
+
+<p>A solução API 3.0 da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST. O modelo empregado é bastante simples: Existem duas URLs (endpoint), uma específica operações que causam efeitos colaterais - como autorização, captura e cancelamento de transações, e uma URL específica para operações que não causam efeitos colaterais, como pesquisa de transações.</p>
+
+<h2 id="que-tipo-de-conteúdo-é-enviado-na-integração?">Que tipo de conteúdo é enviado na integração?</h2>
+
+<p>Para simplificar ao máximo a solução API 3.0, a integração é feita através do envio de JSONs numa arquitetura REST. Cada tipo de mensagem deve ser enviada para um recurso identificado através do path e enviada segundo o método HTTP adequado:</p>
+
+<ul>
+<li><strong>POST</strong> - O método HTTP POST é utilizado na criação dos recursos ou no envio de informações que serão processadas. Por exemplo, criação de uma transação.</li>
+<li><strong>PUT</strong> - O método HTTP PUT é utilizado para atualização de um recurso já existente. Por exemplo, captura ou cancelamento de uma transação previamente autorizada.</li>
+<li><strong>GET</strong> - O método HTTP GET é utilizado para consultas de recursos já existentes. Por exemplo, consulta de transações.</li>
+</ul>
+
+<h2 id="É-preciso-algum-software-proprietário,-como-dlls,-para-fazer-a-integração?">É preciso algum software proprietário, como DLLs, para fazer a integração?</h2>
+
+<p>Não. A ausência de aplicativos proprietários é uma das características da solução: Não é necessário instalar aplicativos no ambiente da loja virtual <strong>em nenhuma hipótese</strong>.</p>
+
+<h2 id="preciso-ter-uma-integração-com-o-webservice-1.5-para-usar-a-3.0?">Preciso ter uma integração com o Webservice 1.5 para usar a 3.0?</h2>
+
+<p>Não, não precisa. Você pode fazer sua primeira integração diretamente com a solução API 3.0. Contudo, se a loja já tiver uma integração com o Webservice 1.5, o <a href="https://developercielo.github.io/Guia-de-migracao-1.5x3.0/">Guia de Migração Cielo</a> ajudará a compreender as diferenças para facilitar a migração para a solução API 3.0.</p>
+
+<h2 id="como-o-webservice-da-cielo-sabe-que-a-requisição-é-da-minha-loja?">Como o Webservice da Cielo sabe que a requisição é da minha loja?</h2>
+
+<p>Todas as requisições a Web Service da Cielo <strong>devem conter o header de autenticação do lojista</strong>, composto pelo número de credenciamento, <code class="prettyprint">MerchantId</code>, e chave de acesso, <code class="prettyprint">MerchantKey</code>, fornecidos pela Cielo no momento da afiliação.</p>
+
+<h2 id="preciso-fazer-uma-afiliação-antes-de-testar-a-integração?">Preciso fazer uma afiliação antes de testar a integração?</h2>
+
+<p>Não é necessário uma afiliação para utilizar o Sanbox Cielo. Basta acessar o <a href="https://cadastrosandbox.cieloecommerce.cielo.com.br/">Cadastro do Sandbox</a> e criar uma conta de testes. Ao fim do cadastro você receberá um <code class="prettyprint">MerchantId</code> e um <code class="prettyprint">MerchantKey</code>, que deverão ser utilizados para autenticar todas as requisições feitas para os endpoints da API.</p>
+
+<h2 id="o-sandbox-possui-um-ambiente-onde-posso-ver-as-transações-de-testes?">O Sandbox possui um ambiente onde posso ver as transações de testes?</h2>
+
+<p>Não; o Sandbox, porém, permite que o desenvolvedor armazene o <code class="prettyprint">TID</code> da transação e, então, envie uma requisição de consulta. Com os <code class="prettyprint">TID</code> armazenados, o desenvolvedor consegue, inclusive, desenvolver seu próprio portal de consultas e gestão de transações.</p>
+
+<h2 id="preciso-utilizar-cartões-de-crédito-de-verdade-para-testar-a-integração?">Preciso utilizar cartões de crédito de verdade para testar a integração?</h2>
+
+<p>Não; você pode utilizar o meio de pagamento simulado, que é um meio de pagamento que emula a utilizaçao de pagamentos com Cartão de Crétido. Com esse meio de pagamento é possivel simular todos os fluxos de Autorização, Captura e Cancelamento. Para melhor utilização do Meio de Pagamento Simulado, estamos disponibilizando cartões de testes na tabela abaixo. Os status das transações serão conforme a utilização de cada cartão.</p>
+
+<table><thead>
+<tr>
+<th>Status da Transação</th>
+<th>Cartões para realização dos testes</th>
+<th>Código de Retorno</th>
+<th>Mensagem de Retorno</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Autorizado</td>
+<td>0000.0000.0000.0001 / 0000.0000.0000.0004</td>
+<td>4</td>
+<td>Operação realizada com sucesso</td>
+</tr>
+<tr>
+<td>Não Autorizado</td>
+<td>0000.0000.0000.0002</td>
+<td>2</td>
+<td>Não Autorizada</td>
+</tr>
+<tr>
+<td>Autorização Aleatória</td>
+<td>0000.0000.0000.0009</td>
+<td>4 / 99</td>
+<td>Operation Successful / Time Out</td>
+</tr>
+<tr>
+<td>Não Autorizado</td>
+<td>0000.0000.0000.0007</td>
+<td>77</td>
+<td>Cartão Cancelado</td>
+</tr>
+<tr>
+<td>Não Autorizado</td>
+<td>0000.0000.0000.0008</td>
+<td>70</td>
+<td>Problemas com o Cartão de Crédito</td>
+</tr>
+<tr>
+<td>Não Autorizado</td>
+<td>0000.0000.0000.0005</td>
+<td>78</td>
+<td>Cartão Bloqueado</td>
+</tr>
+<tr>
+<td>Não Autorizado</td>
+<td>0000.0000.0000.0003</td>
+<td>57</td>
+<td>Cartão Expirado</td>
+</tr>
+<tr>
+<td>Não Autorizado</td>
+<td>0000.0000.0000.0006</td>
+<td>99</td>
+<td>Time Out</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">As informações de Cód.Segurança (CVV) e validade podem ser aleatórias, mantendo o formato - CVV (3 dígitos) Validade (MM/YYYY).</aside>
+
+<h2 id="existe-um-meio-de-pagamento-simulado-que-não-seja-cartão?">Existe um meio de pagamento simulado que não seja cartão?</h2>
+
+<p>Não. Atualmente o Sandbox da Cielo oferece o meio de pagamento simulado apenas para cartões.</p>
+
+<h2 id="o-que-é-uma-transação?">O que é uma transação?</h2>
+
+<p>O elemento central do Cielo E-commerce é a transação, criada a partir de uma requisição HTTP ao Webservice da Cielo. A identificação única de uma transação na Cielo é feita através do campo <strong>TID</strong>, que está presente no retorno das mensagens de autorização. Esse campo é essencial para realizar consultas, capturas e cancelamentos.</p>
+
+<h2 id="a-api-3.0-só-aceita-transações-com-cartão-de-crédito?">A API 3.0 só aceita transações com cartão de crédito?</h2>
+
+<p>Não; com a solução API 3.0 o lojista pode transacionar com cartões de crédito, de débito, boleto e transferência eletrônica. Ainda, com cartões de crédito o lojista ainda pode fazer autorizações recorrentes em diversos períodos diferentes.</p>
+
+<h2 id="posso-transacionar-em-qualquer-moeda?">Posso transacionar em qualquer moeda?</h2>
+
+<p>Apesar de constar na documentação que o campo <code class="prettyprint">Payments.Currency</code> aceita diversos valores, a API 3.0 suporta apenas o Real Brasileiro - <strong>BRL</strong> - atualmente.</p>
+
+<h2 id="como-faço-uma-autorização-direta?">Como faço uma autorização direta?</h2>
+
+<p>A autorização direta caracteriza-se por ser uma transação onde não há a autenticação do portador, seja por opção (e risco) do lojista, seja porque a bandeira ou emissor não tem suporte. A autorização direta pode ser feita de duas formas: tradicional (com os dados do cartão) ou através de um Card Token.</p>
+
+<h2 id="como-faço-uma-autorização-recorrente?">Como faço uma autorização recorrente?</h2>
+
+<p>A autorização recorrente pode ser feita de duas formas: através do envio de um Card Token previamente cadastrado, ou através de um cartão. A transação recorrente é praticamente igual à transação tradicional, as mudanças consistem nas regras que o emissor e a bandeira utilizam para autorizar ou negar uma transação.</p>
+
+<h2 id="É-possível-fazer-uma-captura-em-um-momento-após-a-autorização?">É possível fazer uma captura em um momento após a autorização?</h2>
+
+<p>Uma transação autorizada somente gera o crédito para o estabelecimento comercial caso ela seja capturada. Por isso, toda venda que o lojista queira efetivar será preciso realizar a captura (ou confirmação) da transação.</p>
+
+<p>Para vendas na modalidade de Crédito, essa confirmação pode ocorrer em dois momentos:</p>
+
+<ul>
+<li>Imediatamente após a autorização (captura total);</li>
+<li>Posterior à autorização (captura total ou parcial).</li>
+</ul>
+
+<p>No primeiro caso, não é necessário enviar uma requisição de captura, pois ela é feita automaticamente pela Cielo após a autorização da transação. Para tanto, é preciso configurar a requisição de transação definindo-se o valor “true” para a TAG <capturar>, conforme visto na seção “Criando uma transação”.</p>
+
+<p>Já no segundo caso, é preciso fazer uma “captura posterior”, através de uma nova requisição ao Webservice da Cielo para confirmar a transação e receber o valor da venda.</p>
+
+<aside class="warning"><strong>Atenção!</strong>: Na modalidade de débito não existe essa opção: toda transação de débito autorizada é capturada automaticamente.</aside>
+
+<h2 id="É-possível-cancelar-uma-transação?">É possível cancelar uma transação?</h2>
+
+<p>O cancelamento é utilizado quando o lojista decide não efetivar um pedido de compra, seja por insuficiência de estoque, por desistência da compra pelo consumidor, ou qualquer outro motivo. Seu uso faz-se necessário principalmente se a transação estiver capturada, pois haverá débito na fatura do portador, caso ela não seja cancelada.</p>
+
+<aside class="notice">Se a transação estiver apenas autorizada e a loja queira cancelá-la, o pedido de cancelamento não é necessário, pois após o prazo de captura expirar, ela será cancelada automaticamente pelo sistema.</aside>
+
+<h2 id="existe-alguma-regra-para-leitura-de-cartões?">Existe alguma regra para leitura de cartões?</h2>
+
+<p>A leitura dos dados do cartão no ambiente próprio é controlada por regras definidas pelo programa de segurança imposto pelas bandeiras de cartões.</p>
+
+<p>Para a Visa, esse programa é o conhecido como AIS (Account Information Security) PCI. Para maiores informações acesse: <a href="www.cielo.com.br">www.cielo.com.br</a> &gt; Serviços &gt; Serviços de Segurança &gt; AIS – Programa de Segurança da Informação , ou entre em contato conosco.</p>
+
+<p>Para a Mastercard o programa de segurança é o SDP (Site Data Protection) PCI. Para maiores informações acesse: <a href="http://www.mastercard.com/us/sdp/index.html">http://www.mastercard.com/us/sdp/index.html</a>, ou entre em contato conosco.</p>
+
+<p>Ademais, atendidos os requisitos, no momento do credenciamento E-commerce deve ser mencionada a escolha por leitura do cartão na própria loja.</p>
+
+            </div>
+        </div>
+    </body>
+    </html>
