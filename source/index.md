@@ -60,7 +60,7 @@ Não; você pode utilizar o meio de pagamento simulado, que é um meio de pagame
 
 ## Existe um meio de pagamento simulado que não seja cartão?
 
-Não. Atualmente o Sandbox da Cielo oferece o meio de pagamento simulado apenas para cartões.
+Sim; também existe a possibilidade de utilizar o meio de pagamento Simulado para boletos.
 
 ## O que é uma transação?
 
