@@ -90,7 +90,6 @@ O suporte ao lojista integrado a 3.0 se dá pelos seguintes canais:
 
 Via a área do lojista, no site https://minhaconta.cielo.com.br/wps/portal/est2/login
 
-
 # Dúvidas de Técnicas / Integração
 
 ## 11. Como funciona a solução API 3.0 da Cielo?
@@ -102,26 +101,23 @@ A solução API 3.0 da plataforma Cielo eCommerce foi desenvolvida com a tecnolo
 Sim, as credenciais utilizadas em cada plataforma são diferentes:
 
 * 1.5 - São utilizadas a AFILIAÇÃO  e a CHAVE DE PRODUÇÃO. Essas crendenciais identificam a loja e a conta destino ao qual o valor da transação será depositado de acordo com a agenda financeira Cielo. Devem ser enviadas no corpo da requisição. A Afiliação é o código de identificação do cadastro da loja na Cielo.
-
 * 3.0 - São utilizadas novas credenciais, MerchantId e MerchantKey. Essas credenciais são utilizadas para identificar a loja. Caso não sejam enviadas no Header da requisição, a transação será bloqueada pela API, retornando "Error". Numa integração com a 3.0 não é possível enviar credenciais da 1.5. A API negará as requisições.
 
-**Exemplos:**
+### Exemplos
 
-1.5
-* Afiliação: 1000000000
-* Chave de produção: bf7001e4a4530004090d782b0b7d0a932d07fedffscb2332d7S3fc2b6S8f7c3c
-
-3.0
-* MerchantId: 0d8b08ab-26ea-400e-9a22-47e58057642b
-* MerchantKey: keR10a0P3R01T0h0C0a0T00U0vsoOy0X0p0Dqyib
-
+* **1.5**
+    * **Afiliação**: `1000000000`
+    * **Chave de produção**: `bf7001e4a4530004090d782b0b7d0a932d07fedffscb2332d7S3fc2b6S8f7c3c`
+* **3.0**
+    * **MerchantId**: `0d8b08ab-26ea-400e-9a22-47e58057642b`
+    * **MerchantKey**: `keR10a0P3R01T0h0C0a0T00U0vsoOy0X0p0Dqyib`
 
 ## 13. Como consigo as credenciais de cada ambiente?
 
 Existem dois ambientes na API 3.0, Sandbox e Produção.
 
-* Sandbox: basta acessar https://cadastrosandbox.cieloecommerce.cielo.com.br/ e realizar um cadastro, suas credenciais serão exibidas após o cadastro
-* Produção: é necessário entrar em contato com a central de credenciamento Cielo e solicitar suas credenciais. Elas serão enviadas via e-mail. Sobre a central de credenciamento acesse https://developercielo.github.io/Guia-de-migracao-1.5x3.0/#suporte-cielo
+* **Sandbox**: basta acessar https://cadastrosandbox.cieloecommerce.cielo.com.br/ e realizar um cadastro, suas credenciais serão exibidas após o cadastro
+* **Produção**: é necessário entrar em contato com a central de credenciamento Cielo e solicitar suas credenciais. Elas serão enviadas via e-mail. Sobre a central de credenciamento acesse https://developercielo.github.io/Guia-de-migracao-1.5x3.0/#suporte-cielo
 
 
 ## 14. É preciso algum software proprietário, como DLLs, para fazer a integração?
@@ -130,18 +126,14 @@ Não. A ausência de aplicativos proprietários é uma das características da s
 
 ## 15. Preciso fazer uma afiliação antes de testar a integração?
 
-Não é necessária uma afiliação para utilizar o Sanbox Cielo. Basta acessar o Cadastro do Sandbox (https://bit.ly/2cHdrzr) e criar uma conta de testes. Ao fim do cadastro você receberá um MerchantId e um MerchantKey, que deverão ser utilizados para autenticar todas as requisições feitas para os endpoints da API.
-
+Não é necessária uma afiliação para utilizar o Sanbox Cielo. Basta acessar o [Cadastro do Sandbox](https://bit.ly/2cHdrzr) e criar uma conta de testes. Ao fim do cadastro você receberá um `MerchantId` e um `MerchantKey`, que deverão ser utilizados para autenticar todas as requisições feitas para os endpoints da API.
 
 ## 16. Que tipo de conteúdo é enviado na integração?
 
 Para simplificar ao máximo a solução API 3.0, a integração é feita através do envio de JSONs numa arquitetura REST. Cada tipo de mensagem deve ser enviada para um recurso identificado através do path e enviada segundo o método HTTP adequado:
 
-
 * **POST** - O método HTTP POST é utilizado na criação dos recursos ou no envio de informações que serão processadas. Por exemplo, criação de uma transação.
-
 * **PUT** - O método HTTP PUT é utilizado para atualização de um recurso já existente. Por exemplo, captura ou cancelamento de uma transação previamente autorizada.
-
 * **GET** - O método HTTP GET é utilizado para consultas de recursos já existentes. Por exemplo, consulta de transações
 
 ## 17. Como testar transações com meios de pagamento simulado?
@@ -159,19 +151,18 @@ Cada meio de pagamento (Crédito, Débito, boleto e Transferência online) possu
 A leitura dos dados do cartão no ambiente próprio é controlada por regras definidas pelo programa de segurança imposto pelas bandeiras de cartões.
 
 * Para a Visa, esse programa é o conhecido como AIS (Account Information Security) PCI. Para maiores informações acesse: www.cielo.com.br > Serviços > Serviços de Segurança > AIS – Programa de Segurança da Informação, ou entre em contato conosco.
-
 * Para a Mastercard o programa de segurança é o SDP (Site Data Protection) PCI. Para maiores informações acesse: http://www.mastercard.com/us/sdp/index.html, ou entre em contato conosco.
 
 Ademais, atendidos os requisitos, no momento do credenciamento E-commerce deve ser mencionada a escolha por leitura do cartão na própria loja.
 
 ## 19. É necessário usar algum certificado em para realizar a conexão com a API 3.0
 
-Sim, é necessário realizar a instalação do certificado SSL EV
-Mais informações em https://developercielo.github.io/Webservice-3.0/#o-que-é-certificado-ev-ssl?
+Sim, é necessário realizar a instalação do certificado SSL EV. Mais informações em https://developercielo.github.io/Webservice-3.0/#o-que-é-certificado-ev-ssl
 
 ## 20. É necessário algum protocolo de segurança para a utilização da API 3.0
 
-É obrigatório o uso de TLS 1.2 na comunicação a API.
+**É obrigatório o uso de TLS 1.2 na comunicação a API.**
+
 SSL,TLS 1.0 e 1.1 não são suportados. Integrações utilizando esses protocolos não poderão realizar transações.
 
 ## 21. Existe alguma restrição de Ips para consumir a API
@@ -185,12 +176,14 @@ Não, o ambiente de Sandbox não possui um ambiente de relatórios. Apenas o amb
 ## 23. A 3.0 possui SDKs em quais linguagens?
 
 Sim, a API possui SDKs para:
-•	iOS
-•	Android
-•	Java
-•	.net
-•	PHP
-•	Python
+
+* iOS
+* Android
+* Java
+* .net
+* PHP
+* Python
+
 Mais informações em: https://github.com/DeveloperCielo  
 
 ## 24. A 3.0 aceita pagamento com diferentes moedas?
@@ -221,7 +214,6 @@ Será possível consultar via API ou via o portal Cielo:
 
 O elemento central do Cielo E-commerce é a transação, criada a partir de uma requisição HTTP ao Webservice da Cielo. A identificação única de uma transação na Cielo é feita através do campo TID, que está presente no retorno das mensagens de autorização. Esse campo é essencial para realizar consultas, capturas e cancelamentos.
 
-
 ## 30. Qual o prazo para uma autorização expirar?
 O prazo para captura de uma transação é definido em seu cadastro Cielo e depende do ramo de atividade de sua empresa.
 Caso uma transação não seja capturada dentro desse limite, ela deixa de ser válida, não podendo mais ser capturada. O status da venda continuará como autorizado, mas não será possível altera-lo.
@@ -232,12 +224,10 @@ Uma transação autorizada somente gera o crédito para o estabelecimento comerc
 
 Para vendas na modalidade de Crédito, essa confirmação pode ocorrer em dois momentos:
 
-* 1.Imediatamente após a autorização (captura total) - não é necessário enviar uma requisição de captura, pois ela é feita automaticamente pela Cielo após a autorização da transação. Para tanto, é preciso configurar a requisição de transação definindo-se o valor “true” para a TAG  conforme visto na seção “Criando uma transação”.
+1. Imediatamente após a autorização (captura total) - não é necessário enviar uma requisição de captura, pois ela é feita automaticamente pela Cielo após a autorização da transação. Para tanto, é preciso configurar a requisição de transação definindo-se o valor “true” para a TAG  conforme visto na seção “Criando uma transação”.
+2. Posterior à autorização (captura total ou parcial) - Já no segundo caso, é preciso fazer uma “captura posterior”, através de uma nova requisição ao Webservice da Cielo para confirmar a transação e receber o valor da venda.
 
-* 2.Posterior à autorização (captura total ou parcial) - Já no segundo caso, é preciso fazer uma “captura posterior”, através de uma nova requisição ao Webservice da Cielo para confirmar a transação e receber o valor da venda.
-
-Atenção! Na modalidade de débito não existe a opção de captura. Toda transação de débito autorizada é capturada automaticamente.
-
+<aside class="warning"><strong>Atenção!</strong><br /><br />Na modalidade de débito não existe a opção de captura. Toda transação de débito autorizada é capturada automaticamente.</aside>
 
 ## 32. É possível cancelar uma transação?
 
@@ -251,7 +241,6 @@ Todas as alterações no status de seus pedidos serão notificadas via a URL de 
 Cada meio de pagamento possui diferentes status, podendo variar em relação a informação retornada.
 
 Exemplo: Boletos não possuem retorno para confirmação de pagamento. A conciliação do meio de pagamento deve ser feita pela lojista.
-
 
 # DÚVIDAS SOBRE RECURSOS E FEATURES
 Dúvidas sobre Recursos e Features
@@ -268,7 +257,7 @@ Por padrão, cada lojista utilizando a API 3.0 deve solicitar ao Suporte Cielo a
 Todas as features disponíveis em produção estão disponíveis no Sandbox a exceção do portal do lojista, disponível exclusivamente em produção, no site cielo.
 
 
-## **Recorrência**
+## Recorrência
 
 ## 1. O que é a Recorrência?
 
@@ -292,13 +281,14 @@ Para a recorrência própria, o início da recorrência e seu agendamento fica a
 ## 4. Posso personalizar o intervalo de recorrência?
 
 Sim, é possível atualizar o intervalo da recorrência inteligente, mas somente para uma das opções de agendamento disponíveis
-A.	Mensal
-B.	Bimestral
-C.	Trimestral
-D.	Semestral
-E.	Anual
 
-OBS: Não há intervalos menos que mensais.
+* Mensal
+* Bimestral
+* Trimestral
+* Semestral
+* Anual
+
+<aside class="notice">OBS: Não há intervalos menos que mensais.</aside>
 
 ## 5. Como ocorre a notificação de novas recorrências?
 
@@ -309,29 +299,22 @@ A notificação de transações de recorrência inteligente são as mesmas envia
 
 Sim, na recorrência inteligente, é possível atualizar dados de uma recorrência via um PUT dentro da API 3.0. Os dados passiveis de modificação são:
 
-* A.Dados do comprador
-* B.Data de encerramento da recorrência
-* C.Número de parcelas da recorrência
-* D.Intervalo de execução da recorrência
-* E.Dia da recorrência.
-* F.Valor da recorrência.
-* G.Dados do meio de pagamento da recorrência
-
+* Dados do comprador
+* Data de encerramento da recorrência
+* Número de parcelas da recorrência
+* Intervalo de execução da recorrência
+* Dia da recorrência.
+* Valor da recorrência.
+* Dados do meio de pagamento da recorrência
 
 ## 7. Quais são as regras para atualizar o intervalo da recorrência.
 
-* A.Se o novo dia informado for depois do atual dia de agendamento, a atualização do dia da recorrência terá efeito na próxima recorrência
-
-Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 10, a data da próxima recorrência será dia10/05.
-
+* A.Se o novo dia informado for depois do atual dia de agendamento, a atualização do dia da recorrência terá efeito na próxima recorrência.
+    * Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 10, a data da próxima recorrência será dia10/05.
 * B.Se o novo dia informado for antes do atual dia de agendamento, a atualização do dia da recorrência, só terá efeito depois que a próxima recorrência for executada com sucesso.
-
-Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 3, a data da próxima recorrência permanecerá dia 25/05, e após ela ser executada, a próxima será agendada para o dia 03/06.
-
+    * Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 3, a data da próxima recorrência permanecerá dia 25/05, e após ela ser executada, a próxima será agendada para o dia 03/06.
 * C.Se o novo dia informado for antes do atual dia de agendamento, mas a próxima recorrência for em outro mês, a atualização do dia da recorrência terá efeito na próxima recorrência.
-
-Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/09. Quando eu atualizar para o dia 3, a data da próxima recorrência será 03/09
-
+    * Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/09. Quando eu atualizar para o dia 3, a data da próxima recorrência será 03/09
 
 ## **Tokenização/Cartão protegido**
 
@@ -343,8 +326,9 @@ Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/09. Quando eu atualizar 
 ## 2.	Quando é possível tokenizar um cartão?
 
 É possível tokenizar o cartão em 2 momentos:
-* No envio de uma transação: Ao se agendar uma recorrência ou em uma transação normal, mas indicar no contrato técnico que deseja salvar o cartão.
-* Utilizando o contrato de salvamento de cartão disponível na documentação tecnica
+
+1. No envio de uma transação: Ao se agendar uma recorrência ou em uma transação normal, mas indicar no contrato técnico que deseja salvar o cartão.
+2. Utilizando o contrato de salvamento de cartão disponível na documentação tecnica
 
 ## 3.	É necessário ser PCI para armazenar os Tokens?
 
@@ -354,8 +338,7 @@ Não, para armazenar os tokens não é necessário ser certificado PCI
 
 Sim, por questão de segurança, a API 3.0 exige o envio do CVV caso um token seja utilizado para transacionar.
 
-
-## **Autenticação**
+## Autenticação
 
 ## 1.	O que é autenticação?
 
