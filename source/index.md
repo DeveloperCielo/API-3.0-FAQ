@@ -7,108 +7,393 @@ toc_footers:
 search: true
 ---
 
-# Perguntas frequentes
+# Dúvidas de negócio
 
-## Como funciona a solução API 3.0 da Cielo?
+## 1. O que é o WebService 3.0?
+
+O webservice 3.0 é a evolução do webservice 1.5 como motor transacional online CIELO. Ele fornece uma API que permite ao lojista cielo realizar uma integração simplificada e modular
+A solução API 3.0 da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST, que é padrão de mercado e independe da tecnologia utilizada por nossos clientes, dessa forma, é possível integrar-se utilizando as mais variadas linguagens de programação, tais como: ASP, ASP. Net, Java, PHP, Ruby, Python, etc.
+
+
+## 2. Qual a diferença entre o Webservice 1.5 e o Webservice 3.0?
+
+O WebService 3.0 oferece novas funcionalidades além de um modelo de integração simplificado
+
+* Integração simplificada - Utilizando um API REST, substituindo o envio de XMLs para a autorização de pagamentos
+* Novos meios de pagamento - Além de cartões de crédito e débito a 3.0 permite aos lojistas o pagamento via Boletos e transferência eletrônica do Banco do Brasil e Bradesco
+* Recorrência Programada - A 3.0 permite ao lojista criar um processo de recorrência automática, sem a necessidade de armazenar dados do cartão. Basta enviar a transação e o intervalo de execução
+* Tokenização de cartões - A API 3.0 permite que o lojista salve cartões de seus clientes, seja para transações de recorrência ou para criação de wallets. O lojista recebe tokens que podem ser utilizados para realizar novas transações. Dessa maneira a cielo garante a segurança e a facilidade de acesso do lojista a uma base própria de cartões e dados de pagamento.
+* Zero Auth - Nova feature que permite ao lojista testar um cartão e verificar se ele se encontra apto a realizar uma determinada transação  - Disponibilidade sugeita a aprovação comercial.
+* Consulta de Bins - feature que permite a validação do tipo de cartão (Crédito/débito) - Disponibilidade sugeita a aprovação comercial.
+* Integração com as principais Wallets - A Api 3.0 ja está integrada com a Visa Checkout e a MasterPass, carteiras das bandeiras Visa e MasterCard, permitindo assim o lojista ter acesso a uma maior gama de clientes.
+* Antifraude - é disponibilizado na API 3.0 Cielo uma análise de risco das transações de cartões de crédito, assim elevando a segurança do lojista e diminuindo o risco de chargebacks
+
+
+## 3. Quais são os meios de pagamentos aceitos no Webservice 3.0?
+
+O Webservice 3.0 Cielo aceita os seguintes meios de pagamento:
+
+* Cartões de crédito: Visa / Mastercard / American Express / ELO / Aura / Diners / Discovery / JCB
+* Cartões de Débito: Visa Eletron / MasterCard
+* Boletos: Banco do Brasil e Bradesco
+* Transferencia eletrônica (Débito online): Banco do Brasil e Bradesco
+
+## 4. Posso manter uma integração 1.5 e uma 3.0 ao mesmo tempo?
+
+Não é possível manter duas integrações simultâneas do webservice 1.5 e do webservice 3.0
+Ao realizar o cadastro de uma das integrações junto ao Cielo Ecommerce será necessário escolher entre uma das plataformas
+Para maiores informações acesse: https://www.cielo.com.br/desenvolvedores
+
+## 5. Não possuo a integração 1.5, posso utilizar a 3.0?
+
+Sim, a integração do webservice 3.0 não depende uma integração previa ao webservice 1.5.
+Basta realizar um cadastro junto a Cielo, obtendo assim suas credenciais para transacionar
+Acesse https://www.cielo.com.br/desenvolvedores para maiores informações.
+
+## 6. Como posso realizar a migração da 1.5 para a 3.0?
+
+A Cielo disponibiliza um ambiente de Sandbox (https://bit.ly/2cHdrzr), onde desenvolvedor pode iniciar um processo de aprendizagem sobre a integração da API.
+
+Após entender a integração, é necessário entrar em contato com o suporte e-commerce Cielo e solicitar a criação de novas credenciais de acesso ao ambiente de produção, assim será possível iniciar a integração em produção.
+
+Para mais informações, acesse: https://developercielo.github.io/Guia-de-migracao-1.5x3.0
+
+
+## 7. Possuo a 1.5, é necessário realizar uma nova homologação para utilizar a 3.0?
+
+Sim, é necessário realizar uma nova homologação para validar a capacidade transacional de seu site.
+Para se integrar a 3.0 em produção será necessário solicitar novas credenciais e iniciar uma nova homologação
+
+
+## 8. Como posso liberar outros meios de pagamento além do cartão de crédito?
+
+Para liberar novos meios de pagamento, você deve entrar em contato com o suporte do Cielo ecommerce e solicitar a ativação do meio de pagamento desejado
+Apenas os boletos necessitam de dados adicionais:
+
+* Banco emissor
+* Agência
+* Conta corrente
+* Convenio
+* Código cedente
+* Validade
+
+## 9. Como posso receber suporte Cielo?
+
+O suporte ao lojista integrado a 3.0 se dá pelos seguintes canais:
+
+* +55 4002-9700 – Capitais e Regiões Metropolitanas
+* +55 0800-570-1700 – Demais Localidades
+* +55 11 2860-1348 – Internacionais (Opção 1 – Suporte técnico/Opção 2 – Credenciamento eCommerce)
+* E-mail: cieloeCommerce@cielo.com.br
+
+## 10. Onde posso acompanhar minhas vendas pela 3.0?
+
+Via a área do lojista, no site https://minhaconta.cielo.com.br/wps/portal/est2/login
+
+
+# Dúvidas de Técnicas / Integração
+
+## 11. Como funciona a solução API 3.0 da Cielo?
 
 A solução API 3.0 da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST. O modelo empregado é bastante simples: Existem duas URLs (endpoint), uma específica operações que causam efeitos colaterais - como autorização, captura e cancelamento de transações, e uma URL específica para operações que não causam efeitos colaterais, como pesquisa de transações.
 
-## Que tipo de conteúdo é enviado na integração?
+## 12. Há mudanças nas credenciais da 1.5 para a 3.0?
+
+Sim, as credenciais utilizadas em cada plataforma são diferentes:
+
+* 1.5 - São utilizadas a AFILIAÇÃO  e a CHAVE DE PRODUÇÃO. Essas crendenciais identificam a loja e a conta destino ao qual o valor da transação será depositado de acordo com a agenda financeira Cielo. Devem ser enviadas no corpo da requisição. A Afiliação é o código de identificação do cadastro da loja na Cielo.
+
+* 3.0 - São utilizadas novas credenciais, MerchantId e MerchantKey. Essas credenciais são utilizadas para identificar a loja. Caso não sejam enviadas no Header da requisição, a transação será bloqueada pela API, retornando "Error". Numa integração com a 3.0 não é possível enviar credenciais da 1.5. A API negará as requisições.
+
+**Exemplos:**
+
+1.5
+* Afiliação: 1000000000
+* Chave de produção: bf7001e4a4530004090d782b0b7d0a932d07fedffscb2332d7S3fc2b6S8f7c3c
+
+3.0
+* MerchantId: 0d8b08ab-26ea-400e-9a22-47e58057642b
+* MerchantKey: keR10a0P3R01T0h0C0a0T00U0vsoOy0X0p0Dqyib
+
+
+## 13. Como consigo as credenciais de cada ambiente?
+
+Existem dois ambientes na API 3.0, Sandbox e Produção.
+
+* Sandbox: basta acessar https://cadastrosandbox.cieloecommerce.cielo.com.br/ e realizar um cadastro, suas credenciais serão exibidas após o cadastro
+* Produção: é necessário entrar em contato com a central de credenciamento Cielo e solicitar suas credenciais. Elas serão enviadas via e-mail. Sobre a central de credenciamento acesse https://developercielo.github.io/Guia-de-migracao-1.5x3.0/#suporte-cielo
+
+
+## 14. É preciso algum software proprietário, como DLLs, para fazer a integração?
+
+Não. A ausência de aplicativos proprietários é uma das características da solução: Não é necessário instalar aplicativos no ambiente da loja em nenhuma hipótese.
+
+## 15. Preciso fazer uma afiliação antes de testar a integração?
+
+Não é necessária uma afiliação para utilizar o Sanbox Cielo. Basta acessar o Cadastro do Sandbox (https://bit.ly/2cHdrzr) e criar uma conta de testes. Ao fim do cadastro você receberá um MerchantId e um MerchantKey, que deverão ser utilizados para autenticar todas as requisições feitas para os endpoints da API.
+
+
+## 16. Que tipo de conteúdo é enviado na integração?
 
 Para simplificar ao máximo a solução API 3.0, a integração é feita através do envio de JSONs numa arquitetura REST. Cada tipo de mensagem deve ser enviada para um recurso identificado através do path e enviada segundo o método HTTP adequado:
 
+
 * **POST** - O método HTTP POST é utilizado na criação dos recursos ou no envio de informações que serão processadas. Por exemplo, criação de uma transação.
+
 * **PUT** - O método HTTP PUT é utilizado para atualização de um recurso já existente. Por exemplo, captura ou cancelamento de uma transação previamente autorizada.
-* **GET** - O método HTTP GET é utilizado para consultas de recursos já existentes. Por exemplo, consulta de transações.
 
-## É preciso algum software proprietário, como DLLs, para fazer a integração?
+* **GET** - O método HTTP GET é utilizado para consultas de recursos já existentes. Por exemplo, consulta de transações
 
-Não. A ausência de aplicativos proprietários é uma das características da solução: Não é necessário instalar aplicativos no ambiente da loja virtual **em nenhuma hipótese**.
+## 17. Como testar transações com meios de pagamento simulado?
 
-## Preciso ter uma integração com o Webservice 1.5 para usar a 3.0?
+Para realizar testes na API 3.0, não é necessário utilizar cartões / meios de pagamentos reais.
+Cada meio de pagamento (Crédito, Débito, boleto e Transferência online) possui uma contra parte simulada.
 
-Não, não precisa. Você pode fazer sua primeira integração diretamente com a solução API 3.0. Contudo, se a loja já tiver uma integração com o Webservice 1.5, o [Guia de Migração Cielo](https://developercielo.github.io/Guia-de-migracao-1.5x3.0/) ajudará a compreender as diferenças para facilitar a migração para a solução API 3.0.
+* C. Crédito - Basta utilizar o Provider "Simulado" e enviar um dos cartões contidos aqui: https://developercielo.github.io/Webservice-3.0/#sandbox
+* Boleto - Será gerado um boleto invalido.
+* C. Debito - Você será redirecionado a uma tela onde poderá selecionar o resultado da operação
+* Transferência online - Você será redirecionado a uma tela onde poderá selecionar o resultado da operação
 
-## Como o Webservice da Cielo sabe que a requisição é da minha loja?
+## 18. Existe alguma regra para leitura de cartões?
 
-Todas as requisições a Web Service da Cielo **devem conter o header de autenticação do lojista**, composto pelo número de credenciamento, `MerchantId`, e chave de acesso, `MerchantKey`, fornecidos pela Cielo no momento da afiliação.
+A leitura dos dados do cartão no ambiente próprio é controlada por regras definidas pelo programa de segurança imposto pelas bandeiras de cartões.
 
-## Preciso fazer uma afiliação antes de testar a integração?
+* Para a Visa, esse programa é o conhecido como AIS (Account Information Security) PCI. Para maiores informações acesse: www.cielo.com.br > Serviços > Serviços de Segurança > AIS – Programa de Segurança da Informação, ou entre em contato conosco.
 
-Não é necessário uma afiliação para utilizar o Sanbox Cielo. Basta acessar o [Cadastro do Sandbox](https://cadastrosandbox.cieloecommerce.cielo.com.br/) e criar uma conta de testes. Ao fim do cadastro você receberá um `MerchantId` e um `MerchantKey`, que deverão ser utilizados para autenticar todas as requisições feitas para os endpoints da API.
+* Para a Mastercard o programa de segurança é o SDP (Site Data Protection) PCI. Para maiores informações acesse: http://www.mastercard.com/us/sdp/index.html, ou entre em contato conosco.
 
-## O Sandbox possui um ambiente onde posso ver as transações de testes?
+Ademais, atendidos os requisitos, no momento do credenciamento E-commerce deve ser mencionada a escolha por leitura do cartão na própria loja.
 
-Não; o Sandbox, porém, permite que o desenvolvedor armazene o `TID` da transação e, então, envie uma requisição de consulta. Com os `TID` armazenados, o desenvolvedor consegue, inclusive, desenvolver seu próprio portal de consultas e gestão de transações.
+## 19. É necessário usar algum certificado em para realizar a conexão com a API 3.0
 
-## Preciso utilizar cartões de crédito de verdade para testar a integração?
+Sim, é necessário realizar a instalação do certificado SSL EV
+Mais informações em https://developercielo.github.io/Webservice-3.0/#o-que-é-certificado-ev-ssl?
 
-Não; você pode utilizar o meio de pagamento simulado, que é um meio de pagamento que emula a utilizaçao de pagamentos com Cartão de Crétido. Com esse meio de pagamento é possivel simular todos os fluxos de Autorização, Captura e Cancelamento. Para melhor utilização do Meio de Pagamento Simulado, estamos disponibilizando cartões de testes na tabela abaixo. Os status das transações serão conforme a utilização de cada cartão.
+## 20. É necessário algum protocolo de segurança para a utilização da API 3.0
 
-|Status da Transação|Cartões para realização dos testes|Código de Retorno|Mensagem de Retorno|
-|-------------------|----------------------------------|-----------------|-------------------|
-|Autorizado|0000.0000.0000.0001 / 0000.0000.0000.0004|4|Operação realizada com sucesso|
-|Não Autorizado|0000.0000.0000.0002|2|Não Autorizada|
-|Autorização Aleatória|0000.0000.0000.0009|4 / 99|Operation Successful / Time Out|
-|Não Autorizado|0000.0000.0000.0007|77|Cartão Cancelado|
-|Não Autorizado|0000.0000.0000.0008|70|Problemas com o Cartão de Crédito|
-|Não Autorizado|0000.0000.0000.0005|78|Cartão Bloqueado|
-|Não Autorizado|0000.0000.0000.0003|57|Cartão Expirado|
-|Não Autorizado|0000.0000.0000.0006|99|Time Out|
+É obrigatório o uso de TLS 1.2 na comunicação a API.
+SSL,TLS 1.0 e 1.1 não são suportados. Integrações utilizando esses protocolos não poderão realizar transações.
 
-<aside class="notice">As informações de Cód.Segurança (CVV) e validade podem ser aleatórias, mantendo o formato - CVV (3 dígitos) Validade (MM/YYYY).</aside>
+## 21. Existe alguma restrição de Ips para consumir a API
 
-## Existe um meio de pagamento simulado que não seja cartão?
+Não há restrições de IP ou necessidade de uso de PROXYs para se integrar a 3.0
 
-Sim; também existe a possibilidade de utilizar o meio de pagamento Simulado para boletos.
+## 22. O Sandbox possui um ambiente onde posso ver as transações de testes?
 
-## O que é uma transação?
+Não, o ambiente de Sandbox não possui um ambiente de relatórios. Apenas o ambiente de produção possui área de relatório de vendas, via o portal do lojista em www.cielo.com.br
 
-O elemento central do Cielo E-commerce é a transação, criada a partir de uma requisição HTTP ao Webservice da Cielo. A identificação única de uma transação na Cielo é feita através do campo **TID**, que está presente no retorno das mensagens de autorização. Esse campo é essencial para realizar consultas, capturas e cancelamentos.
+## 23. A 3.0 possui SDKs em quais linguagens?
 
-## A API 3.0 só aceita transações com cartão de crédito?
+Sim, a API possui SDKs para:
+•	iOS
+•	Android
+•	Java
+•	.net
+•	PHP
+•	Python
+Mais informações em: https://github.com/DeveloperCielo  
 
-Não; com a solução API 3.0 o lojista pode transacionar com cartões de crédito, de débito, boleto e transferência eletrônica. Ainda, com cartões de crédito o lojista ainda pode fazer autorizações recorrentes em diversos períodos diferentes.
+## 24. A 3.0 aceita pagamento com diferentes moedas?
 
-## Posso transacionar em qualquer moeda?
+Não, no momento a 3.0 aceita somente transações em Reais (R$/BRL).
 
-Apesar de constar na documentação que o campo `Payments.Currency` aceita diversos valores, a API 3.0 suporta apenas o Real Brasileiro - **BRL** - atualmente.
+## 25. Poderei consultar informações sobre o meu contrato junto a Cielo (Taxa, prazo de deposito dos valores)?
 
-## Como faço uma autorização direta?
+Não, dados sobre tarifas e valores de cobrança não estão passiveis de consulta via API 3.0
+Esses dados poderão ser consultados via a área do lojista no site Cielo ou via o suporte-cielo
 
-A autorização direta caracteriza-se por ser uma transação onde não há a autenticação do portador, seja por opção (e risco) do lojista, seja porque a bandeira ou emissor não tem suporte. A autorização direta pode ser feita de duas formas: tradicional (com os dados do cartão) ou através de um Card Token.
+## 26. Poderei realizar antecipação de pagamentos pela 3.0?
 
-## Como faço uma autorização recorrente?
+Não, a API 3.0 se destina apenas ao processo de autorização de transações e atualização de dados de pedidos online.
+Dúvidas ou questões a respeito de agenda financeira e antecipação de recebíveis devem ser direcionadas ao Suporte-Cielo
 
-A autorização recorrente pode ser feita de duas formas: através do envio de um Card Token previamente cadastrado, ou através de um cartão. A transação recorrente é praticamente igual à transação tradicional, as mudanças consistem nas regras que o emissor e a bandeira utilizam para autorizar ou negar uma transação.
+## 27. Como minha integração será notificada a respeito das mudanças de status?
 
-## É possível fazer uma captura em um momento após a autorização?
+Mudanças de status serão notificadas via um POST HTTP direcionado a URL de notificação que deve ser cadastrada pelo suporte Cielo.
+
+## 28. Como posso consultar dados a respeito das minhas vendas?
+
+Será possível consultar via API ou via o portal Cielo:
+* API: Toda transação enviada via POST gera uma URL onde pode ser realizado um GET, onde serão retornados os dados do pedido. Mais informações em: https://developercielo.github.io/Webservice-3.0/#criando-uma-transação-simples
+* Portal Cielo: é possível extrair relatórios e pesquisar pedidos a partir do site Cielo. Mais informações em: www.cielo.com.br
+
+## 29. O que é uma transação?
+
+O elemento central do Cielo E-commerce é a transação, criada a partir de uma requisição HTTP ao Webservice da Cielo. A identificação única de uma transação na Cielo é feita através do campo TID, que está presente no retorno das mensagens de autorização. Esse campo é essencial para realizar consultas, capturas e cancelamentos.
+
+
+## 30. Qual o prazo para uma autorização expirar?
+O prazo para captura de uma transação é definido em seu cadastro Cielo e depende do ramo de atividade de sua empresa.
+Caso uma transação não seja capturada dentro desse limite, ela deixa de ser válida, não podendo mais ser capturada. O status da venda continuará como autorizado, mas não será possível altera-lo.
+
+## 31. É possível fazer uma captura em um momento após a autorização?
 
 Uma transação autorizada somente gera o crédito para o estabelecimento comercial caso ela seja capturada. Por isso, toda venda que o lojista queira efetivar será preciso realizar a captura (ou confirmação) da transação.
 
 Para vendas na modalidade de Crédito, essa confirmação pode ocorrer em dois momentos:
 
-* Imediatamente após a autorização (captura total);
-* Posterior à autorização (captura total ou parcial).
+* 1.Imediatamente após a autorização (captura total) - não é necessário enviar uma requisição de captura, pois ela é feita automaticamente pela Cielo após a autorização da transação. Para tanto, é preciso configurar a requisição de transação definindo-se o valor “true” para a TAG  conforme visto na seção “Criando uma transação”.
 
-No primeiro caso, não é necessário enviar uma requisição de captura, pois ela é feita automaticamente pela Cielo após a autorização da transação. Para tanto, é preciso configurar a requisição de transação definindo-se o valor “true” para a TAG <capturar>, conforme visto na seção “Criando uma transação”.
+* 2.Posterior à autorização (captura total ou parcial) - Já no segundo caso, é preciso fazer uma “captura posterior”, através de uma nova requisição ao Webservice da Cielo para confirmar a transação e receber o valor da venda.
 
-Já no segundo caso, é preciso fazer uma “captura posterior”, através de uma nova requisição ao Webservice da Cielo para confirmar a transação e receber o valor da venda.
+Atenção! Na modalidade de débito não existe a opção de captura. Toda transação de débito autorizada é capturada automaticamente.
 
-<aside class="warning"><strong>Atenção!</strong>: Na modalidade de débito não existe essa opção: toda transação de débito autorizada é capturada automaticamente.</aside>
 
-## É possível cancelar uma transação?
+## 32. É possível cancelar uma transação?
 
 O cancelamento é utilizado quando o lojista decide não efetivar um pedido de compra, seja por insuficiência de estoque, por desistência da compra pelo consumidor, ou qualquer outro motivo. Seu uso faz-se necessário principalmente se a transação estiver capturada, pois haverá débito na fatura do portador, caso ela não seja cancelada.
 
-<aside class="notice">Se a transação estiver apenas autorizada e a loja queira cancelá-la, o pedido de cancelamento não é necessário, pois após o prazo de captura expirar, ela será cancelada automaticamente pelo sistema.</aside>
+Se a transação estiver apenas autorizada e a loja queira cancelá-la, o pedido de cancelamento não é necessário, pois após o prazo de captura expirar, o valor não será cobrado do comprador e a transação será invalidada.
 
-## Existe alguma regra para leitura de cartões?
+## 33. Qual diferença entra a notificação para cada tipo de pagamento?
 
-A leitura dos dados do cartão no ambiente próprio é controlada por regras definidas pelo programa de segurança imposto pelas bandeiras de cartões.
+Todas as alterações no status de seus pedidos serão notificadas via a URL de notificação, que deve ser cadastrada junto a Cielo.
+Cada meio de pagamento possui diferentes status, podendo variar em relação a informação retornada.
 
-Para a Visa, esse programa é o conhecido como AIS (Account Information Security) PCI. Para maiores informações acesse: [www.cielo.com.br](www.cielo.com.br) > Serviços > Serviços de Segurança > AIS – Programa de Segurança da Informação , ou entre em contato conosco.
+Exemplo: Boletos não possuem retorno para confirmação de pagamento. A conciliação do meio de pagamento deve ser feita pela lojista.
 
-Para a Mastercard o programa de segurança é o SDP (Site Data Protection) PCI. Para maiores informações acesse: [http://www.mastercard.com/us/sdp/index.html](http://www.mastercard.com/us/sdp/index.html), ou entre em contato conosco.
 
-Ademais, atendidos os requisitos, no momento do credenciamento E-commerce deve ser mencionada a escolha por leitura do cartão na própria loja.
+# DÚVIDAS SOBRE RECURSOS E FEATURES
+Dúvidas sobre Recursos e Features
+
+## Sobre features da 3.0
+
+## 1. Quais features precisam ser habilitadas pela Cielo para utilização na 3.0 em produção?
+Por padrão, cada lojista utilizando a API 3.0 deve solicitar ao Suporte Cielo a habilitação das seguintes funcionalidades:
+* Recorrência
+* Antifraude
+
+
+## 2. Quais Features estão disponíveis em sandbox?
+Todas as features disponíveis em produção estão disponíveis no Sandbox a exceção do portal do lojista, disponível exclusivamente em produção, no site cielo.
+
+
+## **Recorrência**
+
+## 1. O que é a Recorrência?
+
+A Recorrência é um recurso para estabelecimentos que precisam cobrar regularmente por seus produtos/serviços. A recorrência é a execução de transações periódicas e pré-agendadas pelo lojista ou comprador.
+É um recurso muito utilizado para assinaturas de revistas, mensalidades, licenças de software, entre outros.
+
+## 2. Quais são os tipos de recorrência da 3.0?
+
+A API 3.0 disponibiliza duas estruturas de recorrência:
+
+Recorrência Inteligente:  O lojista envia uma transação de agendamento, com dados de pagamento e do comportamento da recorrência, A API replicará o conteúdo dessa transação e a executará automaticamente, sem a necessidade de interferência do lojista. Nesse método, serão disponibilizados recursos diferenciados para modelar a cobrança de acordo com o modelo de negócio adotado. Toda a parametrização é configurável, tais como: periodicidade, data de início e fim, quantidade de tentativas e intervalo.
+
+Recorrência própria: Nesse método, o lojista deverá automatizar o envio das transações de acordo com a sua necessidade. A API apenas reconhece que se trata de uma transação de recorrência, não exigindo como o CVV como obrigatório. Todo o processo de execução periódica da recorrência fica a cargo do lojista
+
+## 3. Quando uma recorrência é criada?
+
+No caso da recorrência inteligente, a recorrência é criada no momento que a primeira transação (transação de agendamento) é “autorizada”, ou seja, mesmo que a venda não seja capturada, futuras transações ocorrerão com base nos dados de agendamento.
+
+Para a recorrência própria, o início da recorrência e seu agendamento fica a cargo do lojista.
+
+## 4. Posso personalizar o intervalo de recorrência?
+
+Sim, é possível atualizar o intervalo da recorrência inteligente, mas somente para uma das opções de agendamento disponíveis
+A.	Mensal
+B.	Bimestral
+C.	Trimestral
+D.	Semestral
+E.	Anual
+
+OBS: Não há intervalos menos que mensais.
+
+## 5. Como ocorre a notificação de novas recorrências?
+
+A notificação de transações de recorrência inteligente são as mesmas enviadas para transações padrão. Para mais informações sobre as notificações de transações, acesse: https://developercielo.github.io/Webservice-3.0/#autorizando-a-primeira-recorrência
+
+
+## 6. É possível atualizar dados de uma recorrência? Quais?
+
+Sim, na recorrência inteligente, é possível atualizar dados de uma recorrência via um PUT dentro da API 3.0. Os dados passiveis de modificação são:
+
+* A.Dados do comprador
+* B.Data de encerramento da recorrência
+* C.Número de parcelas da recorrência
+* D.Intervalo de execução da recorrência
+* E.Dia da recorrência.
+* F.Valor da recorrência.
+* G.Dados do meio de pagamento da recorrência
+
+
+## 7. Quais são as regras para atualizar o intervalo da recorrência.
+
+* A.Se o novo dia informado for depois do atual dia de agendamento, a atualização do dia da recorrência terá efeito na próxima recorrência
+
+Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 10, a data da próxima recorrência será dia10/05.
+
+* B.Se o novo dia informado for antes do atual dia de agendamento, a atualização do dia da recorrência, só terá efeito depois que a próxima recorrência for executada com sucesso.
+
+Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/05. Quando eu atualizar para o dia 3, a data da próxima recorrência permanecerá dia 25/05, e após ela ser executada, a próxima será agendada para o dia 03/06.
+
+* C.Se o novo dia informado for antes do atual dia de agendamento, mas a próxima recorrência for em outro mês, a atualização do dia da recorrência terá efeito na próxima recorrência.
+
+Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/09. Quando eu atualizar para o dia 3, a data da próxima recorrência será 03/09
+
+
+## **Tokenização/Cartão protegido**
+
+## 1.	O que é a tokenização/cartão protegido da 3.0
+
+É uma plataforma que permite o armazenamento seguro de dados sensíveis de cartão de crédito. Estes dados são transformados em um código criptografado chamado de “token”, que poderá ser armazenado em banco de dados. Com a plataforma, a loja poderá oferecer recursos como "Compra com 1 clique” e "Retentativa de envio de transação”, sempre preservando a integridade e a confidencialidade das informações.
+
+
+## 2.	Quando é possível tokenizar um cartão?
+
+É possível tokenizar o cartão em 2 momentos:
+* No envio de uma transação: Ao se agendar uma recorrência ou em uma transação normal, mas indicar no contrato técnico que deseja salvar o cartão.
+* Utilizando o contrato de salvamento de cartão disponível na documentação tecnica
+
+## 3.	É necessário ser PCI para armazenar os Tokens?
+
+Não, para armazenar os tokens não é necessário ser certificado PCI
+
+## 4.	É necessário enviar o CVV para realizar uma transação somente com o token?
+
+Sim, por questão de segurança, a API 3.0 exige o envio do CVV caso um token seja utilizado para transacionar.
+
+
+## **Autenticação**
+
+## 1.	O que é autenticação?
+
+A Autenticação é um fluxo de pagamento onde o comprador é direcionado ao banco emissor do cartão, para que o comprador seja identificado como o real portador no momento da compra
+
+## 2.	A Autenticação é obrigatória?
+
+A autenticação é obrigatória apenas para cartão de débito, sendo uma opção para lojistas que desejem autenticar cartões de crédito
+
+## 3.	O redirecionamento é obrigatório?
+
+Sim, o processo de autenticação exige que o comprador seja direcionado para o ambiente do banco.
+
+## 4.	É necessário habilitar a autenticação em meu cadastro Cielo?
+
+Sim, é necessário que o lojista entre em contato com o suporte cielo e solicite que sua Afiliação possa estar apta a realizar autenticações online.
+
+## 5.	Quais bandeiras podem realizar a autenticação?
+
+Visa e Mastercard
+
+# Analise de Fraude
+
+## 1.	O que é a análise de fraude Cielo?
+
+É uma plataforma de prevenção à fraude que fornece uma análise de risco detalhada das compras on-line. Cada transação é submetida a mais de 260 regras, além das regras específicas de cada segmento, e geram uma recomendação de risco em aproximadamente dois segundos. Este processo é totalmente transparente para o portador do cartão. De acordo com os critérios preestabelecidos, o pedido pode ser automaticamente aceito, recusado ou encaminhado para análise manual.
+
+## 2.	A análise de fraude é obrigatória?
+
+Não, a análise de fraude ocorre como um adendo ao processo de autorização de cartões de crédito. Basta que o Antifraude esteja habilitado em seu cadastro na Cielo.
+Para mais informações sobre como realizar uma análise de fraude, veja: https://developercielo.github.io/Webservice-3.0/#criando-uma-venda-com-analise-de-fraude
+
+## 3.	Caso ocorre um chargeback em uma venda analisada, serei reembolsado?
+
+Não, a análise de fraude oferecida pela cielo apenas informa quais dados fogem do padrão de compra/atividades do comprador, indicando quais pontos apresentam maiores evidencias/risco de uma suposta fraude.
+A decisão de aceite da transação e sua captura são de inteira responsabilidade do lojista.
+Caso um chargeback seja realizado, a Cielo não se responsabiliza por reembolsar o lojista.
+
+## 4.	Posso utilizar um Antifraude próprio junto a API 3.0?
+
+Não, o lojista pode apenas utilizar o próprio AF Cielo como meio de analise dentro da 3.0
