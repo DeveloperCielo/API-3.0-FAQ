@@ -242,22 +242,17 @@ Cada meio de pagamento possui diferentes status, podendo variar em relação a i
 
 Exemplo: Boletos não possuem retorno para confirmação de pagamento. A conciliação do meio de pagamento deve ser feita pela lojista.
 
-# DÚVIDAS SOBRE RECURSOS E FEATURES
-Dúvidas sobre Recursos e Features
-
-## Sobre features da 3.0
+# Dúvidas sobre Recursos e Features
 
 ## 1. Quais features precisam ser habilitadas pela Cielo para utilização na 3.0 em produção?
 Por padrão, cada lojista utilizando a API 3.0 deve solicitar ao Suporte Cielo a habilitação das seguintes funcionalidades:
 * Recorrência
 * Antifraude
 
-
 ## 2. Quais Features estão disponíveis em sandbox?
 Todas as features disponíveis em produção estão disponíveis no Sandbox a exceção do portal do lojista, disponível exclusivamente em produção, no site cielo.
 
-
-## Recorrência
+# Recorrência
 
 ## 1. O que é a Recorrência?
 
@@ -316,7 +311,7 @@ Sim, na recorrência inteligente, é possível atualizar dados de uma recorrênc
 * C.Se o novo dia informado for antes do atual dia de agendamento, mas a próxima recorrência for em outro mês, a atualização do dia da recorrência terá efeito na próxima recorrência.
     * Ex.: Hoje é dia 5, e a próxima recorrência é dia 25/09. Quando eu atualizar para o dia 3, a data da próxima recorrência será 03/09
 
-## **Tokenização/Cartão protegido**
+# Tokenização/Cartão protegido
 
 ## 1.	O que é a tokenização/cartão protegido da 3.0
 
@@ -338,7 +333,7 @@ Não, para armazenar os tokens não é necessário ser certificado PCI
 
 Sim, por questão de segurança, a API 3.0 exige o envio do CVV caso um token seja utilizado para transacionar.
 
-## Autenticação
+# Autenticação
 
 ## 1.	O que é autenticação?
 
