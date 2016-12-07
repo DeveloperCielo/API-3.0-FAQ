@@ -3,6 +3,7 @@ title: Perguntas frequentes
 
 toc_footers:
   - <a href='/Webservice-3.0/'>Integração API 3.0</a>
+  - <a href='/Guia-de-migracao-1.5x3.0/'>Guia de migração da API 1.5 para a 3.0</a>
 
 search: true
 ---
