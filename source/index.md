@@ -170,9 +170,10 @@ SSL,TLS 1.0 e 1.1 não são suportados. Integrações utilizando esses protocolo
 
 Não há restrições de IP ou necessidade de uso de PROXYs para se integrar a 3.0
 
-## 22. O Sandbox possui um ambiente onde posso ver as transações de testes?
+## 22. Como consultar transações de Sandbox??
 
-Não, o ambiente de Sandbox não possui um ambiente de relatórios. Apenas o ambiente de produção possui área de relatório de vendas, via o portal do lojista em www.cielo.com.br
+O ambiente de Sandbox não possui uma área de relatórios, sendo necessario realizar uma consulta via API para visualizar transações nesse ambiente.
+Veja como realizar essa consulta em nosso manual de integração: https://developercielo.github.io/Webservice-3.0/#consultando-vendas
 
 ## 23. A 3.0 possui SDKs em quais linguagens?
 
