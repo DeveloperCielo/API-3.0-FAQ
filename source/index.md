@@ -2,56 +2,56 @@
 title: Perguntas frequentes
 
 toc_footers:
-  - <a href='/Webservice-3.0/'>Integração API 3.0</a>
-  - <a href='/Guia-de-migracao-1.5x3.0/'>Guia de migração da API 1.5 para a 3.0</a>
+  - <a href='/Webservice-3.0/'>Integração API Cielo eCommerce</a>
+  - <a href='/Guia-de-migracao-1.5x3.0/'>Guia de migração da API 1.5 para a API Cielo eCommerce</a>
 
 search: true
 ---
 
 # Dúvidas de negócio
 
-## 1. O que é o WebService 3.0?
+## 1. O que é a API Cielo eCommerce?
 
-O webservice 3.0 é a evolução do webservice 1.5 como motor transacional online CIELO. Ele fornece uma API que permite ao lojista cielo realizar uma integração simplificada e modular
-A solução API 3.0 da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST, que é padrão de mercado e independe da tecnologia utilizada por nossos clientes, dessa forma, é possível integrar-se utilizando as mais variadas linguagens de programação, tais como: ASP, ASP. Net, Java, PHP, Ruby, Python, etc.
+A API Cielo eCommerce é a evolução do webservice 1.5 como motor transacional online CIELO. Ele fornece uma API que permite ao lojista cielo realizar uma integração simplificada e modular
+A solução API Cielo eCommerce da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST, que é padrão de mercado e independe da tecnologia utilizada por nossos clientes, dessa forma, é possível integrar-se utilizando as mais variadas linguagens de programação, tais como: ASP, ASP. Net, Java, PHP, Ruby, Python, etc.
 
 
-## 2. Qual a diferença entre o Webservice 1.5 e o Webservice 3.0?
+## 2. Qual a diferença entre o Webservice 1.5 e a API Cielo eCommerce?
 
-O WebService 3.0 oferece novas funcionalidades além de um modelo de integração simplificado
+A API Cielo eCommerce oferece novas funcionalidades além de um modelo de integração simplificado
 
 * Integração simplificada - Utilizando um API REST, substituindo o envio de XMLs para a autorização de pagamentos
-* Novos meios de pagamento - Além de cartões de crédito e débito a 3.0 permite aos lojistas o pagamento via Boletos e transferência eletrônica do Banco do Brasil e Bradesco
-* Recorrência Programada - A 3.0 permite ao lojista criar um processo de recorrência automática, sem a necessidade de armazenar dados do cartão. Basta enviar a transação e o intervalo de execução
-* Tokenização de cartões - A API 3.0 permite que o lojista salve cartões de seus clientes, seja para transações de recorrência ou para criação de wallets. O lojista recebe tokens que podem ser utilizados para realizar novas transações. Dessa maneira a cielo garante a segurança e a facilidade de acesso do lojista a uma base própria de cartões e dados de pagamento.
+* Novos meios de pagamento - Além de cartões de crédito e débito a API Cielo eCommerce permite aos lojistas o pagamento via Boletos e transferência eletrônica do Banco do Brasil e Bradesco
+* Recorrência Programada - A API Cielo eCommerce permite ao lojista criar um processo de recorrência automática, sem a necessidade de armazenar dados do cartão. Basta enviar a transação e o intervalo de execução
+* Tokenização de cartões - A API Cielo eCommerce permite que o lojista salve cartões de seus clientes, seja para transações de recorrência ou para criação de wallets. O lojista recebe tokens que podem ser utilizados para realizar novas transações. Dessa maneira a cielo garante a segurança e a facilidade de acesso do lojista a uma base própria de cartões e dados de pagamento.
 * Zero Auth - Nova feature que permite ao lojista testar um cartão e verificar se ele se encontra apto a realizar uma determinada transação  - Disponibilidade sugeita a aprovação comercial.
 * Consulta de Bins - feature que permite a validação do tipo de cartão (Crédito/débito) - Disponibilidade sugeita a aprovação comercial.
-* Integração com as principais Wallets - A Api 3.0 ja está integrada com a Visa Checkout e a MasterPass, carteiras das bandeiras Visa e MasterCard, permitindo assim o lojista ter acesso a uma maior gama de clientes.
-* Antifraude - é disponibilizado na API 3.0 Cielo uma análise de risco das transações de cartões de crédito, assim elevando a segurança do lojista e diminuindo o risco de chargebacks
+* Integração com as principais Wallets - A API Cielo eCommerce ja está integrada com a Visa Checkout e a MasterPass, carteiras das bandeiras Visa e MasterCard, permitindo assim o lojista ter acesso a uma maior gama de clientes.
+* Antifraude - é disponibilizado na API Cielo eCommerce Cielo uma análise de risco das transações de cartões de crédito, assim elevando a segurança do lojista e diminuindo o risco de chargebacks
 
 
-## 3. Quais são os meios de pagamentos aceitos no Webservice 3.0?
+## 3. Quais são os meios de pagamentos aceitos na API Cielo eCommerce?
 
-O Webservice 3.0 Cielo aceita os seguintes meios de pagamento:
+A API Cielo eCommerce Cielo aceita os seguintes meios de pagamento:
 
 * Cartões de crédito: Visa / Mastercard / American Express / ELO / Aura / Diners / Discovery / JCB
 * Cartões de Débito: Visa Eletron / MasterCard
 * Boletos: Banco do Brasil e Bradesco
 * Transferencia eletrônica (Débito online): Banco do Brasil e Bradesco
 
-## 4. Posso manter uma integração 1.5 e uma 3.0 ao mesmo tempo?
+## 4. Posso manter uma integração 1.5 e uma API Cielo eCommerce ao mesmo tempo?
 
-Não é possível manter duas integrações simultâneas do webservice 1.5 e do webservice 3.0
+Não é possível manter duas integrações simultâneas do webservice 1.5 e da API Cielo eCommerce
 Ao realizar o cadastro de uma das integrações junto ao Cielo Ecommerce será necessário escolher entre uma das plataformas
 Para maiores informações acesse: https://www.cielo.com.br/desenvolvedores
 
-## 5. Não possuo a integração 1.5, posso utilizar a 3.0?
+## 5. Não possuo a integração 1.5, posso utilizar a API Cielo eCommerce?
 
-Sim, a integração do webservice 3.0 não depende uma integração previa ao webservice 1.5.
+Sim, a integração da API Cielo eCommerce não depende uma integração previa ao webservice 1.5.
 Basta realizar um cadastro junto a Cielo, obtendo assim suas credenciais para transacionar
 Acesse https://www.cielo.com.br/desenvolvedores para maiores informações.
 
-## 6. Como posso realizar a migração da 1.5 para a 3.0?
+## 6. Como posso realizar a migração da 1.5 para a API Cielo eCommerce?
 
 A Cielo disponibiliza um ambiente de Sandbox (https://bit.ly/2cHdrzr), onde desenvolvedor pode iniciar um processo de aprendizagem sobre a integração da API.
 
@@ -60,10 +60,10 @@ Após entender a integração, é necessário entrar em contato com o suporte e-
 Para mais informações, acesse: https://developercielo.github.io/Guia-de-migracao-1.5x3.0
 
 
-## 7. Possuo a 1.5, é necessário realizar uma nova homologação para utilizar a 3.0?
+## 7. Possuo a 1.5, é necessário realizar uma nova homologação para utilizar a API Cielo eCommerce?
 
 Sim, é necessário realizar uma nova homologação para validar a capacidade transacional de seu site.
-Para se integrar a 3.0 em produção será necessário solicitar novas credenciais e iniciar uma nova homologação
+Para se integrar a API Cielo eCommerce em produção será necessário solicitar novas credenciais e iniciar uma nova homologação
 
 
 ## 8. Como posso liberar outros meios de pagamento além do cartão de crédito?
@@ -80,42 +80,42 @@ Apenas os boletos necessitam de dados adicionais:
 
 ## 9. Como posso receber suporte Cielo?
 
-O suporte ao lojista integrado a 3.0 se dá pelos seguintes canais:
+O suporte ao lojista integrado a API Cielo eCommerce se dá pelos seguintes canais:
 
 * +55 4002-9700 – Capitais e Regiões Metropolitanas
 * +55 0800-570-1700 – Demais Localidades
 * +55 11 2860-1348 – Internacionais (Opção 1 – Suporte técnico/Opção 2 – Credenciamento eCommerce)
 * E-mail: cieloeCommerce@cielo.com.br
 
-## 10. Onde posso acompanhar minhas vendas pela 3.0?
+## 10. Onde posso acompanhar minhas vendas pela API Cielo eCommerce?
 
 Via a área do lojista, no site https://minhaconta.cielo.com.br/wps/portal/est2/login
 
 # Dúvidas de Técnicas / Integração
 
-## 11. Como funciona a solução API 3.0 da Cielo?
+## 11. Como funciona a solução API Cielo eCommerce da Cielo?
 
-A solução API 3.0 da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST. O modelo empregado é bastante simples: Existem duas URLs (endpoint), uma específica operações que causam efeitos colaterais - como autorização, captura e cancelamento de transações, e uma URL específica para operações que não causam efeitos colaterais, como pesquisa de transações.
+A solução API Cielo eCommerce da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST. O modelo empregado é bastante simples: Existem duas URLs (endpoint), uma específica operações que causam efeitos colaterais - como autorização, captura e cancelamento de transações, e uma URL específica para operações que não causam efeitos colaterais, como pesquisa de transações.
 
-## 12. Há mudanças nas credenciais da 1.5 para a 3.0?
+## 12. Há mudanças nas credenciais da 1.5 para a API Cielo eCommerce?
 
 Sim, as credenciais utilizadas em cada plataforma são diferentes:
 
 * 1.5 - São utilizadas a AFILIAÇÃO  e a CHAVE DE PRODUÇÃO. Essas crendenciais identificam a loja e a conta destino ao qual o valor da transação será depositado de acordo com a agenda financeira Cielo. Devem ser enviadas no corpo da requisição. A Afiliação é o código de identificação do cadastro da loja na Cielo.
-* 3.0 - São utilizadas novas credenciais, MerchantId e MerchantKey. Essas credenciais são utilizadas para identificar a loja. Caso não sejam enviadas no Header da requisição, a transação será bloqueada pela API, retornando "Error". Numa integração com a 3.0 não é possível enviar credenciais da 1.5. A API negará as requisições.
+* API Cielo eCommerce - São utilizadas novas credenciais, MerchantId e MerchantKey. Essas credenciais são utilizadas para identificar a loja. Caso não sejam enviadas no Header da requisição, a transação será bloqueada pela API, retornando "Error". Numa integração com a API Cielo eCommerce não é possível enviar credenciais da 1.5. A API negará as requisições.
 
 ### Exemplos
 
 * **1.5**
     * **Afiliação**: `1000000000`
     * **Chave de produção**: `bf7001e4a4530004090d782b0b7d0a932d07fedffscb2332d7S3fc2b6S8f7c3c`
-* **3.0**
+* **API Cielo eCommerce**
     * **MerchantId**: `0d8b08ab-26ea-400e-9a22-47e58057642b`
     * **MerchantKey**: `keR10a0P3R01T0h0C0a0T00U0vsoOy0X0p0Dqyib`
 
 ## 13. Como consigo as credenciais de cada ambiente?
 
-Existem dois ambientes na API 3.0, Sandbox e Produção.
+Existem dois ambientes na API Cielo eCommerce, Sandbox e Produção.
 
 * **Sandbox**: basta acessar https://cadastrosandbox.cieloecommerce.cielo.com.br/ e realizar um cadastro, suas credenciais serão exibidas após o cadastro
 * **Produção**: é necessário entrar em contato com a central de credenciamento Cielo e solicitar suas credenciais. Elas serão enviadas via e-mail. Sobre a central de credenciamento acesse https://developercielo.github.io/Guia-de-migracao-1.5x3.0/#suporte-cielo
@@ -131,7 +131,7 @@ Não é necessária uma afiliação para utilizar o Sanbox Cielo. Basta acessar 
 
 ## 16. Que tipo de conteúdo é enviado na integração?
 
-Para simplificar ao máximo a solução API 3.0, a integração é feita através do envio de JSONs numa arquitetura REST. Cada tipo de mensagem deve ser enviada para um recurso identificado através do path e enviada segundo o método HTTP adequado:
+Para simplificar ao máximo a solução API Cielo eCommerce, a integração é feita através do envio de JSONs numa arquitetura REST. Cada tipo de mensagem deve ser enviada para um recurso identificado através do path e enviada segundo o método HTTP adequado:
 
 * **POST** - O método HTTP POST é utilizado na criação dos recursos ou no envio de informações que serão processadas. Por exemplo, criação de uma transação.
 * **PUT** - O método HTTP PUT é utilizado para atualização de um recurso já existente. Por exemplo, captura ou cancelamento de uma transação previamente autorizada.
@@ -139,7 +139,7 @@ Para simplificar ao máximo a solução API 3.0, a integração é feita atravé
 
 ## 17. Como testar transações com meios de pagamento simulado?
 
-Para realizar testes na API 3.0, não é necessário utilizar cartões / meios de pagamentos reais.
+Para realizar testes na API Cielo eCommerce, não é necessário utilizar cartões / meios de pagamentos reais.
 Cada meio de pagamento (Crédito, Débito, boleto e Transferência online) possui uma contra parte simulada.
 
 * C. Crédito - Basta utilizar o Provider "Simulado" e enviar um dos cartões contidos aqui: https://developercielo.github.io/Webservice-3.0/#sandbox
@@ -156,11 +156,11 @@ A leitura dos dados do cartão no ambiente próprio é controlada por regras def
 
 Ademais, atendidos os requisitos, no momento do credenciamento E-commerce deve ser mencionada a escolha por leitura do cartão na própria loja.
 
-## 19. É necessário usar algum certificado em para realizar a conexão com a API 3.0
+## 19. É necessário usar algum certificado em para realizar a conexão com a API Cielo eCommerce
 
 Sim, é necessário realizar a instalação do certificado SSL EV. Mais informações em https://developercielo.github.io/Webservice-3.0/#o-que-é-certificado-ev-ssl
 
-## 20. É necessário algum protocolo de segurança para a utilização da API 3.0
+## 20. É necessário algum protocolo de segurança para a utilização da API Cielo eCommerce
 
 **É obrigatório o uso de TLS 1.2 na comunicação a API.**
 
@@ -168,14 +168,14 @@ SSL,TLS 1.0 e 1.1 não são suportados. Integrações utilizando esses protocolo
 
 ## 21. Existe alguma restrição de Ips para consumir a API
 
-Não há restrições de IP ou necessidade de uso de PROXYs para se integrar a 3.0
+Não há restrições de IP ou necessidade de uso de PROXYs para se integrar a API Cielo eCommerce
 
 ## 22. Como consultar transações de Sandbox??
 
 O ambiente de Sandbox não possui uma área de relatórios, sendo necessario realizar uma consulta via API para visualizar transações nesse ambiente.
 Veja como realizar essa consulta em nosso manual de integração: https://developercielo.github.io/Webservice-3.0/#consultando-vendas
 
-## 23. A 3.0 possui SDKs em quais linguagens?
+## 23. A API Cielo eCommerce possui SDKs em quais linguagens?
 
 Sim, a API possui SDKs para:
 
@@ -188,18 +188,18 @@ Sim, a API possui SDKs para:
 
 Mais informações em: https://github.com/DeveloperCielo  
 
-## 24. A 3.0 aceita pagamento com diferentes moedas?
+## 24. A API Cielo eCommerce aceita pagamento com diferentes moedas?
 
-Não, no momento a 3.0 aceita somente transações em Reais (R$/BRL).
+Não, no momento a API Cielo eCommerce aceita somente transações em Reais (R$/BRL).
 
 ## 25. Poderei consultar informações sobre o meu contrato junto a Cielo (Taxa, prazo de deposito dos valores)?
 
-Não, dados sobre tarifas e valores de cobrança não estão passiveis de consulta via API 3.0
+Não, dados sobre tarifas e valores de cobrança não estão passiveis de consulta via API Cielo eCommerce
 Esses dados poderão ser consultados via a área do lojista no site Cielo ou via o suporte-cielo
 
-## 26. Poderei realizar antecipação de pagamentos pela 3.0?
+## 26. Poderei realizar antecipação de pagamentos pela API Cielo eCommerce?
 
-Não, a API 3.0 se destina apenas ao processo de autorização de transações e atualização de dados de pedidos online.
+Não, a API Cielo eCommerce se destina apenas ao processo de autorização de transações e atualização de dados de pedidos online.
 Dúvidas ou questões a respeito de agenda financeira e antecipação de recebíveis devem ser direcionadas ao Suporte-Cielo
 
 ## 27. Como minha integração será notificada a respeito das mudanças de status?
@@ -246,8 +246,8 @@ Exemplo: Boletos não possuem retorno para confirmação de pagamento. A concili
 
 # Dúvidas sobre Recursos e Features
 
-## 1. Quais features precisam ser habilitadas pela Cielo para utilização na 3.0 em produção?
-Por padrão, cada lojista utilizando a API 3.0 deve solicitar ao Suporte Cielo a habilitação das seguintes funcionalidades:
+## 1. Quais features precisam ser habilitadas pela Cielo para utilização na API Cielo eCommerce em produção?
+Por padrão, cada lojista utilizando a API Cielo eCommerce deve solicitar ao Suporte Cielo a habilitação das seguintes funcionalidades:
 * Recorrência
 * Antifraude
 
@@ -261,9 +261,9 @@ Todas as features disponíveis em produção estão disponíveis no Sandbox a ex
 A Recorrência é um recurso para estabelecimentos que precisam cobrar regularmente por seus produtos/serviços. A recorrência é a execução de transações periódicas e pré-agendadas pelo lojista ou comprador.
 É um recurso muito utilizado para assinaturas de revistas, mensalidades, licenças de software, entre outros.
 
-## 2. Quais são os tipos de recorrência da 3.0?
+## 2. Quais são os tipos de recorrência da API Cielo eCommerce?
 
-A API 3.0 disponibiliza duas estruturas de recorrência:
+A API Cielo eCommerce disponibiliza duas estruturas de recorrência:
 
 Recorrência Inteligente:  O lojista envia uma transação de agendamento, com dados de pagamento e do comportamento da recorrência, A API replicará o conteúdo dessa transação e a executará automaticamente, sem a necessidade de interferência do lojista. Nesse método, serão disponibilizados recursos diferenciados para modelar a cobrança de acordo com o modelo de negócio adotado. Toda a parametrização é configurável, tais como: periodicidade, data de início e fim, quantidade de tentativas e intervalo.
 
@@ -294,7 +294,7 @@ A notificação de transações de recorrência inteligente são as mesmas envia
 
 ## 6. É possível atualizar dados de uma recorrência? Quais?
 
-Sim, na recorrência inteligente, é possível atualizar dados de uma recorrência via um PUT dentro da API 3.0. Os dados passiveis de modificação são:
+Sim, na recorrência inteligente, é possível atualizar dados de uma recorrência via um PUT dentro da API Cielo eCommerce. Os dados passiveis de modificação são:
 
 * Dados do comprador
 * Data de encerramento da recorrência
@@ -315,7 +315,7 @@ Sim, na recorrência inteligente, é possível atualizar dados de uma recorrênc
 
 # Tokenização/Cartão protegido
 
-## 1.	O que é a tokenização/cartão protegido da 3.0
+## 1.	O que é a tokenização/cartão protegido da API Cielo eCommerce
 
 É uma plataforma que permite o armazenamento seguro de dados sensíveis de cartão de crédito. Estes dados são transformados em um código criptografado chamado de “token”, que poderá ser armazenado em banco de dados. Com a plataforma, a loja poderá oferecer recursos como "Compra com 1 clique” e "Retentativa de envio de transação”, sempre preservando a integridade e a confidencialidade das informações.
 
@@ -333,7 +333,7 @@ Não, para armazenar os tokens não é necessário ser certificado PCI
 
 ## 4.	É necessário enviar o CVV para realizar uma transação somente com o token?
 
-Sim, por questão de segurança, a API 3.0 exige o envio do CVV caso um token seja utilizado para transacionar.
+Sim, por questão de segurança, a API Cielo eCommerce exige o envio do CVV caso um token seja utilizado para transacionar.
 
 # Autenticação
 
@@ -374,6 +374,6 @@ Não, a análise de fraude oferecida pela cielo apenas informa quais dados fogem
 A decisão de aceite da transação e sua captura são de inteira responsabilidade do lojista.
 Caso um chargeback seja realizado, a Cielo não se responsabiliza por reembolsar o lojista.
 
-## 4.	Posso utilizar um Antifraude próprio junto a API 3.0?
+## 4.	Posso utilizar um Antifraude próprio junto a API Cielo eCommerce?
 
-Não, o lojista pode apenas utilizar o próprio AF Cielo como meio de analise dentro da 3.0
+Não, o lojista pode apenas utilizar o próprio AF Cielo como meio de analise dentro da API Cielo eCommerce
