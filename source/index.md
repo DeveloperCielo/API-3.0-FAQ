@@ -188,14 +188,17 @@ Sim, a API possui SDKs para:
 
 Mais informações em: https://github.com/DeveloperCielo  
 
-## 24. A API Cielo eCommerce aceita pagamento com diferentes moedas?
+## 24. A API Cielo eCommerce aceita pagamento com diferentes moedas e cartões internacionais?
 
-Não, no momento a API Cielo eCommerce aceita somente transações em Reais (R$/BRL).
+* **Moedas**:No momento a API Cielo eCommerce aceita somente transações em Reais (R$/BRL).
+* **Cartões internacionais**: Sim, a API aceita cartãoes internacionais, mas as transações são processadas em Reais (R$/BRL).
+
+**OBS**: Cartões internacionais não podem realizar parcelamento.
 
 ## 25. Poderei consultar informações sobre o meu contrato junto a Cielo (Taxa, prazo de deposito dos valores)?
 
 Não, dados sobre tarifas e valores de cobrança não estão passiveis de consulta via API Cielo eCommerce
-Esses dados poderão ser consultados via a área do lojista no site Cielo ou via o suporte-cielo
+Esses dados poderão ser consultados via a área do lojista no site Cielo ou via o suporte-cielo.
 
 ## 26. Poderei realizar antecipação de pagamentos pela API Cielo eCommerce?
 
@@ -377,3 +380,52 @@ Caso um chargeback seja realizado, a Cielo não se responsabiliza por reembolsar
 ## 4.	Posso utilizar um Antifraude próprio junto a API Cielo eCommerce?
 
 Não, o lojista pode apenas utilizar o próprio AF Cielo como meio de analise dentro da API Cielo eCommerce
+
+
+# Zero Auth
+
+## 1.	O que é o Zero Auth
+
+O Zero Auth é uma ferramenta de validação de cartões da API Cielo. A validação permite que o lojista saiba se o cartão é valido ou não antes de enviar a transação para autorização, antecipando o motivo de uma provável não autorização.
+
+
+## 2.	O que o Zero Auth faz?
+
+O Zero Auth simula uma autorização Cielo, validando dados como:
+
+* Se o cartão está valido junto ao banco emissor
+* Se o cartão possui limite disponível
+* Se o cartão funciona no Brasil
+* Se o número do cartão está correto
+* Se o CVV é valido
+
+
+## 3.	O que o Zero Auth não pode fazer:
+
+O Zero auth não informa:
+
+* Limite de crédito do cartão
+* Informações sobre o portador
+* Informa dados sobre um cartão em especifico
+
+
+## 4.	Em quais cartões o Zero Auth funciona?
+
+Apenas em cartões de crédito MasterCard e Visa.
+
+## 5.	Como integrar ao Zero Auth
+
+O Zerto Auth é uma feature disponibilizada penas a alguns lojistas Cielo. Para saber mais sobre o modo de integração, entre em contato com o Suporte Ecommerce Cielo.
+
+# Integração de Gateways
+
+## 1.	Utilizo um Gateway de pagamentos. Posso usar a API Cielo Ecommerce?
+
+Sim, mas é necessarios que o seu Gateway esteja integrado a API Cielo Ecommerce e possua suas credenciais de acesso (MerchantKey e MerchantID)
+
+## 2.	Como um gateway de pagamentos pode se integrar?
+
+Utilizando a mesma integração padrão de um lojista Cielo, entretando o Gateway precisará possuir as credenciais do lojista para poder realizar autorizações de pagamentos.
+
+
+
