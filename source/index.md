@@ -15,7 +15,6 @@ search: true
 A API Cielo eCommerce é a evolução do webservice 1.5 como motor transacional online CIELO. Ele fornece uma API que permite ao lojista cielo realizar uma integração simplificada e modular
 A solução API Cielo eCommerce da plataforma Cielo eCommerce foi desenvolvida com a tecnologia REST, que é padrão de mercado e independe da tecnologia utilizada por nossos clientes, dessa forma, é possível integrar-se utilizando as mais variadas linguagens de programação, tais como: ASP, ASP. Net, Java, PHP, Ruby, Python, etc.
 
-
 ## 2. Qual a diferença entre o Webservice 1.5 e a API Cielo eCommerce?
 
 A API Cielo eCommerce oferece novas funcionalidades além de um modelo de integração simplificado
@@ -28,7 +27,6 @@ A API Cielo eCommerce oferece novas funcionalidades além de um modelo de integr
 * Consulta de Bins - feature que permite a validação do tipo de cartão (Crédito/débito) - Disponibilidade sugeita a aprovação comercial.
 * Integração com as principais Wallets - A API Cielo eCommerce ja está integrada com a Visa Checkout e a MasterPass, carteiras das bandeiras Visa e MasterCard, permitindo assim o lojista ter acesso a uma maior gama de clientes.
 * Antifraude - é disponibilizado na API Cielo eCommerce Cielo uma análise de risco das transações de cartões de crédito, assim elevando a segurança do lojista e diminuindo o risco de chargebacks
-
 
 ## 3. Quais são os meios de pagamentos aceitos na API Cielo eCommerce?
 
@@ -59,12 +57,10 @@ Após entender a integração, é necessário entrar em contato com o suporte e-
 
 Para mais informações, acesse: https://developercielo.github.io/Guia-de-migracao-1.5x3.0
 
-
 ## 7. Possuo a 1.5, é necessário realizar uma nova homologação para utilizar a API Cielo eCommerce?
 
 Sim, é necessário realizar uma nova homologação para validar a capacidade transacional de seu site.
 Para se integrar a API Cielo eCommerce em produção será necessário solicitar novas credenciais e iniciar uma nova homologação
-
 
 ## 8. Como posso liberar outros meios de pagamento além do cartão de crédito?
 
@@ -119,7 +115,6 @@ Existem dois ambientes na API Cielo eCommerce, Sandbox e Produção.
 
 * **Sandbox**: basta acessar https://cadastrosandbox.cieloecommerce.cielo.com.br/ e realizar um cadastro, suas credenciais serão exibidas após o cadastro
 * **Produção**: é necessário entrar em contato com a central de credenciamento Cielo e solicitar suas credenciais. Elas serão enviadas via e-mail. Sobre a central de credenciamento acesse https://developercielo.github.io/Guia-de-migracao-1.5x3.0/#suporte-cielo
-
 
 ## 14. É preciso algum software proprietário, como DLLs, para fazer a integração?
 
@@ -294,7 +289,6 @@ Sim, é possível atualizar o intervalo da recorrência inteligente, mas somente
 
 A notificação de transações de recorrência inteligente são as mesmas enviadas para transações padrão. Para mais informações sobre as notificações de transações, acesse: https://developercielo.github.io/Webservice-3.0/#autorizando-a-primeira-recorrência
 
-
 ## 6. É possível atualizar dados de uma recorrência? Quais?
 
 Sim, na recorrência inteligente, é possível atualizar dados de uma recorrência via um PUT dentro da API Cielo eCommerce. Os dados passiveis de modificação são:
@@ -321,7 +315,6 @@ Sim, na recorrência inteligente, é possível atualizar dados de uma recorrênc
 ## 1.	O que é a tokenização/cartão protegido da API Cielo eCommerce
 
 É uma plataforma que permite o armazenamento seguro de dados sensíveis de cartão de crédito. Estes dados são transformados em um código criptografado chamado de “token”, que poderá ser armazenado em banco de dados. Com a plataforma, a loja poderá oferecer recursos como "Compra com 1 clique” e "Retentativa de envio de transação”, sempre preservando a integridade e a confidencialidade das informações.
-
 
 ## 2.	Quando é possível tokenizar um cartão?
 
@@ -381,13 +374,11 @@ Caso um chargeback seja realizado, a Cielo não se responsabiliza por reembolsar
 
 Não, o lojista pode apenas utilizar o próprio AF Cielo como meio de analise dentro da API Cielo eCommerce
 
-
 # Zero Auth
 
 ## 1.	O que é o Zero Auth
 
 O Zero Auth é uma ferramenta de validação de cartões da API Cielo. A validação permite que o lojista saiba se o cartão é valido ou não antes de enviar a transação para autorização, antecipando o motivo de uma provável não autorização.
-
 
 ## 2.	O que o Zero Auth faz?
 
@@ -399,7 +390,6 @@ O Zero Auth simula uma autorização Cielo, validando dados como:
 * Se o número do cartão está correto
 * Se o CVV é valido
 
-
 ## 3.	O que o Zero Auth não pode fazer:
 
 O Zero auth não informa:
@@ -407,7 +397,6 @@ O Zero auth não informa:
 * Limite de crédito do cartão
 * Informações sobre o portador
 * Informa dados sobre um cartão em especifico
-
 
 ## 4.	Em quais cartões o Zero Auth funciona?
 
@@ -426,6 +415,4 @@ Sim, mas é necessarios que o seu Gateway esteja integrado a API Cielo Ecommerce
 ## 2.	Como um gateway de pagamentos pode se integrar?
 
 Utilizando a mesma integração padrão de um lojista Cielo, entretando o Gateway precisará possuir as credenciais do lojista para poder realizar autorizações de pagamentos.
-
-
 
